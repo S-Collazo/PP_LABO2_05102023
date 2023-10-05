@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "Iu+ZN3Jyt8gEr6kYVXd90f2pdr3oqdWdN8KIJL7MIxdF8jlc6SXbz/zAzQkncSfCmBSkRnBxLzfYgpjSzQvUAA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Santiago\\Documents\\UTN\\Laboratorio II\\PP_LABO2_05102023\\MiCalculadora\\MiCalculadora.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Santiago\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.21\\microsoft.windowsdesktop.app.ref.6.0.21.nupkg.sha512",
+    "C:\\Users\\Santiago\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.21\\microsoft.netcore.app.ref.6.0.21.nupkg.sha512",
+    "C:\\Users\\Santiago\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.21\\microsoft.aspnetcore.app.ref.6.0.21.nupkg.sha512",
+    "C:\\Users\\Santiago\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.21\\microsoft.netcore.app.host.win-x64.6.0.21.nupkg.sha512"
+  ],
+  "logs": []
+}
