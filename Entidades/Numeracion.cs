@@ -26,7 +26,7 @@ namespace Entidades
         protected Numeracion(string valor)
         {
             msgError = "Numero invalido";
-            this.InicializaValor();
+            this.InicializaValor(valor);
         }
 
         public abstract Numeracion CambiarSistemaDeNumeracion(ESistema sistema)

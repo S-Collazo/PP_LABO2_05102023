@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PP_LABO2_05102023", "PP_LAB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiCalculadora", "MiCalculadora\MiCalculadora.csproj", "{0862A952-A9D6-408F-8B23-E2F9EF5BE165}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{346F78B0-A1FD-4B38-95B1-09230016046B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0862A952-A9D6-408F-8B23-E2F9EF5BE165}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0862A952-A9D6-408F-8B23-E2F9EF5BE165}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0862A952-A9D6-408F-8B23-E2F9EF5BE165}.Release|Any CPU.Build.0 = Release|Any CPU
+		{346F78B0-A1FD-4B38-95B1-09230016046B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{346F78B0-A1FD-4B38-95B1-09230016046B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{346F78B0-A1FD-4B38-95B1-09230016046B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{346F78B0-A1FD-4B38-95B1-09230016046B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
