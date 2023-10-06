@@ -30,7 +30,7 @@ namespace Entidades
                 Array.Reverse(valorBinarioArray);
                 double valorConvertido = 0;
                 double n = 0;
-                foreach(char c in valorBinarioArray)
+                foreach (char c in valorBinarioArray)
                 {
                     double digito = (double)c;
                     valorConvertido += c * Math.Pow(2, n);

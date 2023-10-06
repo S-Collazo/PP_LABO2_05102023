@@ -34,6 +34,10 @@ namespace Entidades
                 return DecimalABinario();
             }
         }
+
+        ///<summary>
+        ///Convierte el valor actual de la instancia en un número binario y lo utiliza para crrar el objeto SistemaBinario.
+        ///</summary>
         private SistemaBinario DecimalABinario()
         {
             if (this.ValorNumerico > 0)
@@ -49,7 +53,7 @@ namespace Entidades
                 }
                 char[] valorConvertidoArray = new char[valorConvertido.Length];
                 int i = 0;
-                foreach(char c in valorConvertido)
+                foreach (char c in valorConvertido)
                 {
                     valorConvertidoArray[i] += c;
                     i++;
@@ -76,7 +80,8 @@ namespace Entidades
         }
         private bool EsSistemaDecimalValido(string valor)
         {
-            if (Double.TryParse(valor, out double doubleValido)){
+            if (Double.TryParse(valor, out double doubleValido))
+            {
                 return true;
             }
             else
