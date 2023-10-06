@@ -1,18 +1,21 @@
 using System.ComponentModel;
+using Entidades;
 
-namespace MiCalculadora
+namespace View
 {
     public partial class FrmCalculadora : Form
     {
+        private Calculadora calculadora;
 
         public FrmCalculadora()
         {
             InitializeComponent();
+            this.calculadora = new Calculadora("Nombre y Apellido");
         }
 
         private void FrmCalculadora_Load(object sender, EventArgs e)
         {
-
+            this.cmbOperacion.DataSource = new char[] { '+', '-', '*', '/' };
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -22,25 +25,35 @@ namespace MiCalculadora
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            this.txtPrimerOperador.Text = string.Empty;
-            this.txtSegundoOperador.Text = string.Empty;
-            this.lblResultado.Text = "Resultado:";
+            this.calculadora.EliminarHistorialDeOperaciones();
+            this.txtPrimerOperando.Text = string.Empty;
+            this.txtSegundoOperando.Text = string.Empty;
+            this.lblResultado.Text = $"Resultado:";
+            this.MostrarHistorial();
         }
 
         private void btnOperar_Click(object sender, EventArgs e)
         {
-            if (cmbOperacion.SelectedItem != null && txtPrimerOperador.Text != "" && txtSegundoOperador.Text != "")
+            if (cmbOperacion.SelectedItem != null && txtPrimerOperando.Text != "" && txtSegundoOperando.Text != "")
             {
+                char operador;
+                calculadora.PrimerOperando =
+                this.GetOperando(this.txtPrimerOperando.Text);
+                calculadora.SegundoOperando =
+                this.GetOperando(this.txtSegundoOperando.Text);
+                operador = (char)this.cmbOperacion.SelectedItem;
+                this.calculadora.Calcular(operador);
+                this.calculadora.ActualizaHistorialDeOperaciones(operador);
+                this.lblResultado.Text = $"Resultado: {calculadora.Resultado.Valor}";
+                this.MostrarHistorial();
             }
         }
 
         private void FrmCalculadora_FormClosing(object sender, FormClosingEventArgs e)
         {
-            string closingTxt = "¿Desea cerrar la calculadora?";
-            string closingCaption = "Cierre";
-            DialogResult closing = MessageBox.Show(closingTxt, closingCaption, MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
-            if (closing == DialogResult.No)
+            DialogResult result = MessageBox.Show("Desea cerrar la calculadora ? ",
+            "Cierre", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
             {
                 e.Cancel = true;
             }
@@ -48,17 +61,17 @@ namespace MiCalculadora
 
         private void rdbBinario_CheckedChanged(object sender, EventArgs e)
         {
-
+            Calculadora.Sistema = ESistema.Binario;
         }
 
         private void rdbDecimal_CheckedChanged(object sender, EventArgs e)
         {
-
+            Calculadora.Sistema = ESistema.Decimal;
         }
 
         private void txtprimerOperador_TextChanged(object sender, EventArgs e)
         {
-            foreach (char c in txtPrimerOperador.Text)
+            foreach (char c in txtPrimerOperando.Text)
             {
                 if (!(c < '0' || c > '9'))
                 {
@@ -72,7 +85,7 @@ namespace MiCalculadora
 
         private void txtSegundoOperador_TextChanged(object sender, EventArgs e)
         {
-            foreach (char c in txtSegundoOperador.Text)
+            foreach (char c in txtSegundoOperando.Text)
             {
                 if (!(c < '0' || c > '9'))
                 {
@@ -83,5 +96,23 @@ namespace MiCalculadora
                 }
             }
         }
+
+        private Numeracion GetOperando(string value)
+        {
+            if (Calculadora.Sistema == ESistema.Binario)
+            {
+                return new SistemaBinario(value);
+            }
+            return new SistemaDecimal(value);
+        }
+
+        private void MostrarHistorial()
+        {
+            this.lstHistorial.DataSource = null;
+            this.lstHistorial.DataSource =
+            this.calculadora.Operaciones;
+        }
+
+
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    internal class SistemaDecimal : Numeracion
+    public class SistemaDecimal : Numeracion
     {
         internal override double ValorNumerico
         {
@@ -31,7 +31,7 @@ namespace Entidades
             }
             else
             {
-                return new SistemaBinario(this.Valor.ToString());
+                return DecimalABinario();
             }
         }
         private SistemaBinario DecimalABinario()
@@ -40,22 +40,23 @@ namespace Entidades
             {
                 int valorBinario = (int)this.ValorNumerico;
                 int valorADividir = valorBinario;
-                char[] valorConvertido = new char;
+                string valorConvertido = "";
                 while (valorADividir != 0)
                 {
                     int n = valorADividir % 2;
                     valorADividir /= 2;
-                    valorConvertido = new char[n];
+                    valorConvertido += n;
                 }
-                Array.Reverse(valorConvertido);
-                return new SistemaBinario(valorConvertido.ToString());
+                char[] valorConvertidoArray = new char[valorConvertido.Length];
+                valorConvertido = string.Join(",", valorConvertidoArray);
+                return new SistemaBinario(valorConvertido);
             }
             else
             {
                 return new SistemaBinario(this.ValorNumerico.ToString());
             }
         }
-        protected bool EsNumeracionValida(string valor)
+        protected new bool EsNumeracionValida(string valor)
         {
             if (base.EsNumeracionValida(valor) && EsSistemaDecimalValido(valor))
             {
@@ -68,7 +69,7 @@ namespace Entidades
         }
         private bool EsSistemaDecimalValido(string valor)
         {
-            if (Double.TryParse(valor, out double doubleValido){
+            if (Double.TryParse(valor, out double doubleValido)){
                 return true;
             }
             else

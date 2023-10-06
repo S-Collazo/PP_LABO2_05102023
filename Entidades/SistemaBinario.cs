@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    internal class SistemaBinario : Numeracion
+    public class SistemaBinario : Numeracion
     {
         internal override double ValorNumerico
         {
@@ -24,20 +24,31 @@ namespace Entidades
 
         private SistemaDecimal BinarioADecimal()
         {
-            if(this.valor == msgError)
+            if (this.ValorNumerico > 0)
             {
-                return new SistemaDecimal(this.valor);
+                int valorBinario = (int)this.ValorNumerico;
+                int valorADividir = valorBinario;
+                string valorConvertido = "";
+                while (valorADividir != 0)
+                {
+                    int n = valorADividir % 2;
+                    valorADividir /= 2;
+                    valorConvertido += n;
+                }
+                char[] valorConvertidoArray = new char[valorConvertido.Length];
+                valorConvertido = string.Join(",", valorConvertidoArray);
+                return new SistemaDecimal(valorConvertido);
             }
             else
             {
-                return Double.MinValue;
+                return new SistemaDecimal(this.ValorNumerico.ToString());
             }
         }
         public override Numeracion CambiarSistemaDeNumeracion(ESistema sistema)
         {
             if (sistema == ESistema.Decimal)
             {
-                return new SistemaDecimal(this.Valor.ToString());
+                return BinarioADecimal();
             }
             else
             {
@@ -46,7 +57,7 @@ namespace Entidades
         }
         protected bool EsNumeracionValida(string valor)
         {
-            if (base.EsNumeracionValida(valor) && EsSistemaBinarioValido(valor)
+            if (base.EsNumeracionValida(valor) && EsSistemaBinarioValido(valor))
             {
                 return true;
             }

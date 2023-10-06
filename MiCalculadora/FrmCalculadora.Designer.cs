@@ -1,4 +1,4 @@
-﻿namespace MiCalculadora
+﻿namespace View
 {
     partial class FrmCalculadora
     {
@@ -32,11 +32,11 @@
             grpSistema = new GroupBox();
             rdbBinario = new RadioButton();
             rdbDecimal = new RadioButton();
-            lblPrimerOperador = new Label();
+            lblPrimerOperando = new Label();
             lblOperacion = new Label();
-            lblSegundoOperador = new Label();
-            txtPrimerOperador = new TextBox();
-            txtSegundoOperador = new TextBox();
+            lblSegundoOperando = new Label();
+            txtPrimerOperando = new TextBox();
+            txtSegundoOperando = new TextBox();
             cmbOperacion = new ComboBox();
             btnOperar = new Button();
             btnLimpiar = new Button();
@@ -93,15 +93,15 @@
             rdbDecimal.UseVisualStyleBackColor = true;
             rdbDecimal.CheckedChanged += rdbDecimal_CheckedChanged;
             // 
-            // lblPrimerOperador
+            // lblPrimerOperando
             // 
-            lblPrimerOperador.AutoSize = true;
-            lblPrimerOperador.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPrimerOperador.Location = new Point(60, 350);
-            lblPrimerOperador.Name = "lblPrimerOperador";
-            lblPrimerOperador.Size = new Size(321, 54);
-            lblPrimerOperador.TabIndex = 2;
-            lblPrimerOperador.Text = "Primer operador:";
+            lblPrimerOperando.AutoSize = true;
+            lblPrimerOperando.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            lblPrimerOperando.Location = new Point(60, 350);
+            lblPrimerOperando.Name = "lblPrimerOperando";
+            lblPrimerOperando.Size = new Size(321, 54);
+            lblPrimerOperando.TabIndex = 2;
+            lblPrimerOperando.Text = "Primer operador:";
             // 
             // lblOperacion
             // 
@@ -113,33 +113,33 @@
             lblOperacion.TabIndex = 3;
             lblOperacion.Text = "Operacion:";
             // 
-            // lblSegundoOperador
+            // lblSegundoOperando
             // 
-            lblSegundoOperador.AutoSize = true;
-            lblSegundoOperador.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSegundoOperador.Location = new Point(769, 350);
-            lblSegundoOperador.Name = "lblSegundoOperador";
-            lblSegundoOperador.Size = new Size(365, 54);
-            lblSegundoOperador.TabIndex = 4;
-            lblSegundoOperador.Text = "Segundo operador:";
+            lblSegundoOperando.AutoSize = true;
+            lblSegundoOperando.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            lblSegundoOperando.Location = new Point(769, 350);
+            lblSegundoOperando.Name = "lblSegundoOperando";
+            lblSegundoOperando.Size = new Size(365, 54);
+            lblSegundoOperando.TabIndex = 4;
+            lblSegundoOperando.Text = "Segundo operador:";
             // 
-            // txtPrimerOperador
+            // txtPrimerOperando
             // 
-            txtPrimerOperador.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPrimerOperador.Location = new Point(70, 407);
-            txtPrimerOperador.Name = "txtPrimerOperador";
-            txtPrimerOperador.Size = new Size(291, 34);
-            txtPrimerOperador.TabIndex = 2;
-            txtPrimerOperador.TextChanged += txtprimerOperador_TextChanged;
+            txtPrimerOperando.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPrimerOperando.Location = new Point(70, 407);
+            txtPrimerOperando.Name = "txtPrimerOperando";
+            txtPrimerOperando.Size = new Size(291, 34);
+            txtPrimerOperando.TabIndex = 2;
+            txtPrimerOperando.TextChanged += txtprimerOperador_TextChanged;
             // 
-            // txtSegundoOperador
+            // txtSegundoOperando
             // 
-            txtSegundoOperador.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSegundoOperador.Location = new Point(803, 407);
-            txtSegundoOperador.Name = "txtSegundoOperador";
-            txtSegundoOperador.Size = new Size(291, 34);
-            txtSegundoOperador.TabIndex = 4;
-            txtSegundoOperador.TextChanged += txtSegundoOperador_TextChanged;
+            txtSegundoOperando.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txtSegundoOperando.Location = new Point(803, 407);
+            txtSegundoOperando.Name = "txtSegundoOperando";
+            txtSegundoOperando.Size = new Size(291, 34);
+            txtSegundoOperando.TabIndex = 4;
+            txtSegundoOperando.TextChanged += txtSegundoOperador_TextChanged;
             // 
             // cmbOperacion
             // 
@@ -204,7 +204,7 @@
             lblHistorial.TabIndex = 9;
             lblHistorial.Text = "Historial:";
             // 
-            // FrmCalculadora
+            // FrmView
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -215,17 +215,17 @@
             Controls.Add(btnLimpiar);
             Controls.Add(btnOperar);
             Controls.Add(cmbOperacion);
-            Controls.Add(txtSegundoOperador);
-            Controls.Add(txtPrimerOperador);
-            Controls.Add(lblSegundoOperador);
+            Controls.Add(txtSegundoOperando);
+            Controls.Add(txtPrimerOperando);
+            Controls.Add(lblSegundoOperando);
             Controls.Add(lblOperacion);
-            Controls.Add(lblPrimerOperador);
+            Controls.Add(lblPrimerOperando);
             Controls.Add(grpSistema);
             Controls.Add(lblResultado);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "FrmCalculadora";
+            Name = "FrmView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Calculadora de Santiago Collazo";
             FormClosing += FrmCalculadora_FormClosing;
@@ -242,11 +242,11 @@
         private GroupBox grpSistema;
         private RadioButton rdbBinario;
         private RadioButton rdbDecimal;
-        private Label lblPrimerOperador;
+        private Label lblPrimerOperando;
         private Label lblOperacion;
-        private Label lblSegundoOperador;
-        private TextBox txtPrimerOperador;
-        private TextBox txtSegundoOperador;
+        private Label lblSegundoOperando;
+        private TextBox txtPrimerOperando;
+        private TextBox txtSegundoOperando;
         private ComboBox cmbOperacion;
         private Button btnOperar;
         private Button btnLimpiar;

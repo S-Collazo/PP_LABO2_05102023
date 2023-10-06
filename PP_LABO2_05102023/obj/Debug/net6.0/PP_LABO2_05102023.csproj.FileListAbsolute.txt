@@ -1,0 +1,15 @@
+C:\Users\Santiago\Documents\UTN\Laboratorio II\PP_LABO2_05102023\PP_LABO2_05102023\bin\Debug\net6.0\PP_LABO2_05102023.exe
+C:\Users\Santiago\Documents\UTN\Laboratorio II\PP_LABO2_05102023\PP_LABO2_05102023\bin\Debug\net6.0\PP_LABO2_05102023.deps.json
+C:\Users\Santiago\Documents\UTN\Laboratorio II\PP_LABO2_05102023\PP_LABO2_05102023\bin\Debug\net6.0\PP_LABO2_05102023.runtimeconfig.json
+C:\Users\Santiago\Documents\UTN\Laboratorio II\PP_LABO2_05102023\PP_LABO2_05102023\bin\Debug\net6.0\PP_LABO2_05102023.dll
+C:\Users\Santiago\Documents\UTN\Laboratorio II\PP_LABO2_05102023\PP_LABO2_05102023\bin\Debug\net6.0\PP_LABO2_05102023.pdb
+C:\Users\Santiago\Documents\UTN\Laboratorio II\PP_LABO2_05102023\PP_LABO2_05102023\obj\Debug\net6.0\PP_LABO2_05102023.csproj.AssemblyReference.cache
+C:\Users\Santiago\Documents\UTN\Laboratorio II\PP_LABO2_05102023\PP_LABO2_05102023\obj\Debug\net6.0\PP_LABO2_05102023.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Santiago\Documents\UTN\Laboratorio II\PP_LABO2_05102023\PP_LABO2_05102023\obj\Debug\net6.0\PP_LABO2_05102023.AssemblyInfoInputs.cache
+C:\Users\Santiago\Documents\UTN\Laboratorio II\PP_LABO2_05102023\PP_LABO2_05102023\obj\Debug\net6.0\PP_LABO2_05102023.AssemblyInfo.cs
+C:\Users\Santiago\Documents\UTN\Laboratorio II\PP_LABO2_05102023\PP_LABO2_05102023\obj\Debug\net6.0\PP_LABO2_05102023.csproj.CoreCompileInputs.cache
+C:\Users\Santiago\Documents\UTN\Laboratorio II\PP_LABO2_05102023\PP_LABO2_05102023\obj\Debug\net6.0\PP_LABO2_05102023.dll
+C:\Users\Santiago\Documents\UTN\Laboratorio II\PP_LABO2_05102023\PP_LABO2_05102023\obj\Debug\net6.0\refint\PP_LABO2_05102023.dll
+C:\Users\Santiago\Documents\UTN\Laboratorio II\PP_LABO2_05102023\PP_LABO2_05102023\obj\Debug\net6.0\PP_LABO2_05102023.pdb
+C:\Users\Santiago\Documents\UTN\Laboratorio II\PP_LABO2_05102023\PP_LABO2_05102023\obj\Debug\net6.0\PP_LABO2_05102023.genruntimeconfig.cache
+C:\Users\Santiago\Documents\UTN\Laboratorio II\PP_LABO2_05102023\PP_LABO2_05102023\obj\Debug\net6.0\ref\PP_LABO2_05102023.dll

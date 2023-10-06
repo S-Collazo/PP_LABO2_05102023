@@ -2,7 +2,7 @@
 
 namespace Entidades
 {
-    abstract class Numeracion
+    public abstract class Numeracion
     {
         protected static string msgError;
         protected string valor;
@@ -29,10 +29,7 @@ namespace Entidades
             this.InicializaValor(valor);
         }
 
-        public abstract Numeracion CambiarSistemaDeNumeracion(ESistema sistema)
-        {
-
-        }
+        public abstract Numeracion CambiarSistemaDeNumeracion(ESistema sistema);
         protected bool EsNumeracionValida(string valor)
         {
             if (valor == null || valor.Any(char.IsWhiteSpace))
@@ -63,7 +60,7 @@ namespace Entidades
         }
         public static bool operator ==(Numeracion n1, Numeracion n2)
         {
-            if (n1 != null && n2 != null && n1.GetType() == n2.GetType())
+            if (n1 is not null && n2 is not null && n1.GetType() == n2.GetType())
             {
                 return true;
             }

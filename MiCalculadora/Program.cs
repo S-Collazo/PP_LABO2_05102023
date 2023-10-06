@@ -1,4 +1,6 @@
-namespace MiCalculadora
+using View;
+
+namespace View
 {
     internal static class Program
     {
@@ -9,7 +11,7 @@ namespace MiCalculadora
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new FrmCalculadora());
+            Application.Run(new View.FrmCalculadora());
         }
     }
 }
