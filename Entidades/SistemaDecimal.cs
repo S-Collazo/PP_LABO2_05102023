@@ -38,8 +38,8 @@ namespace Entidades
         {
             if (this.ValorNumerico > 0)
             {
-                int valorBinario = (int)this.ValorNumerico;
-                int valorADividir = valorBinario;
+                int valorDecimal = (int)this.ValorNumerico;
+                int valorADividir = valorDecimal;
                 string valorConvertido = "";
                 while (valorADividir != 0)
                 {
@@ -48,12 +48,19 @@ namespace Entidades
                     valorConvertido += n;
                 }
                 char[] valorConvertidoArray = new char[valorConvertido.Length];
-                valorConvertido = string.Join(",", valorConvertidoArray);
+                int i = 0;
+                foreach(char c in valorConvertido)
+                {
+                    valorConvertidoArray[i] += c;
+                    i++;
+                }
+                Array.Reverse(valorConvertidoArray);
+                valorConvertido = string.Join("", valorConvertidoArray);
                 return new SistemaBinario(valorConvertido);
             }
             else
             {
-                return new SistemaBinario(this.ValorNumerico.ToString());
+                return new SistemaBinario(msgError);
             }
         }
         protected new bool EsNumeracionValida(string valor)

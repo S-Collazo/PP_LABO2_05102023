@@ -24,24 +24,23 @@ namespace Entidades
 
         private SistemaDecimal BinarioADecimal()
         {
-            if (this.ValorNumerico > 0)
+            if (this.valor != msgError)
             {
-                int valorBinario = (int)this.ValorNumerico;
-                int valorADividir = valorBinario;
-                string valorConvertido = "";
-                while (valorADividir != 0)
+                char[] valorBinarioArray = this.ValorNumerico.ToString().ToCharArray();
+                Array.Reverse(valorBinarioArray);
+                double valorConvertido = 0;
+                double n = 0;
+                foreach(char c in valorBinarioArray)
                 {
-                    int n = valorADividir % 2;
-                    valorADividir /= 2;
-                    valorConvertido += n;
+                    double digito = (double)c;
+                    valorConvertido += c * Math.Pow(2, n);
+                    n++;
                 }
-                char[] valorConvertidoArray = new char[valorConvertido.Length];
-                valorConvertido = string.Join(",", valorConvertidoArray);
-                return new SistemaDecimal(valorConvertido);
+                return new SistemaDecimal(valorConvertido.ToString());
             }
             else
             {
-                return new SistemaDecimal(this.ValorNumerico.ToString());
+                return new SistemaDecimal(Double.MinValue.ToString());
             }
         }
         public override Numeracion CambiarSistemaDeNumeracion(ESistema sistema)

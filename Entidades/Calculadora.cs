@@ -85,7 +85,6 @@ namespace Entidades
         }
         public Calculadora(string NombreAlumno)
         {
-            sistema = ESistema.Decimal;
             operaciones = new List<string>();
             this.NombreAlumno = NombreAlumno;
         }
@@ -136,14 +135,14 @@ namespace Entidades
         }
         private Numeracion MapeaResultado(double valor)
         {
+            Numeracion resultadoMapeado = new SistemaDecimal(valor.ToString());
             if (sistema == ESistema.Binario)
             {
-
-                return new SistemaBinario(valor.ToString());
+                return resultadoMapeado.CambiarSistemaDeNumeracion(ESistema.Binario);
             }
             else
             {
-                return new SistemaDecimal(valor.ToString());
+                return resultadoMapeado;
             }
         }
     }
